@@ -1,0 +1,147 @@
+@import '~font-awesome/css/font-awesome.css';
+
+html {
+  color: #34495e;
+  background-color: #41b883;
+  font-family: 'MS Shell Dlg 2';
+}
+
+#app {
+  text-align: center;
+  margin-top: 60px;
+}
+
+#nav {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#nav > a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#nav > .active {
+  color: #34495e;
+  background-color: #fff;
+}
+
+#list {
+  list-style: none;
+  padding: 0;
+}
+
+.todoInput {
+  margin: 20px 20px 20px 0;
+}
+
+.todoInput input {
+  font-size: 20px;
+  font-weight: 400;
+  border: none;
+  max-width: 600px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+}
+
+.todoListItem {
+  position: relative;
+  text-align-last: left;
+  margin: 0 auto;
+  max-width: 600px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 5px auto;
+  padding: 20px 10px;
+
+}
+
+.todoListItem input:checked {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: solid #0079bf;
+  border-width: 0 2px 2px 0;
+}
+
+.todoListItem .toggle {
+  position: absolute;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.todoListItem .toggle + label {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.todoListItem .toggle:checked + label {
+  background-size: contain;
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+
+.todoListItem label {
+  font-size: 20px;
+  word-break: break-all;
+  padding: 0px 45px 0px 60px;
+  height: 40px;
+  line-height: 40px;
+  transition: color 0.7s;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.todoListItem .edit {
+  font-size: 20px;
+  text-align-last: left;
+  width: calc(100% - 40px);
+  word-break: break-all;
+  padding: 0 10px;
+  margin: 0 auto;
+  height: 40px;
+  display: block;
+  line-height: 40px;
+  outline: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.todoListItem .destroy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: auto 10px;
+  font-size: 40px;
+  color: #b81e1e;
+}

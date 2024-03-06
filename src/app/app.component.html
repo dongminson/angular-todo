@@ -1,0 +1,10 @@
+
+<div id="app">
+    <div id="nav">
+        <a routerLink="/all" (click)="setFilter('all')" [class]="getLinkProperty('all') | async">All</a> |
+        <a routerLink="/active" (click)="setFilter('active')" [class]="getLinkProperty('active') | async">Active</a> |
+        <a routerLink="/completed" (click)="setFilter('completed')" [class]="getLinkProperty('completed') | async">Completed</a>
+    </div>
+    <app-input></app-input>
+    <app-list-item></app-list-item>
+</div>

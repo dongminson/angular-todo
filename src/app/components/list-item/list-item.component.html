@@ -1,0 +1,17 @@
+<div class="todoListItem" *ngFor="let todo of getFilteredTodos() | async">
+    <ng-container *ngIf="todo.id === (edit$ | async); else todoRow">
+        <input
+            type="text"
+            class="edit"
+            (change)="setEditContent($event)"
+            (keyup.enter)="updateTodo(todo.id, editTodoContent, !todo.completed)"
+            (keyup.esc)="setEdit('')"
+            (blur)="setEdit('')"
+        >
+    </ng-container>
+    <ng-template #todoRow>
+        <input class="toggle" type="checkbox" [checked]="todo.completed" (change)="updateTodo(todo.id, todo.content, !todo.completed)">
+        <label (click)="setEdit(todo.id)" [class.completed]="todo.completed">{{ todo.content }}</label>
+        <i (click)="removeTodo(todo.id, todo.content)" class="fa fa-trash destroy"></i>
+    </ng-template>
+</div>
